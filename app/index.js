@@ -1,13 +1,24 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
+import Header from '../components/Header';
+import car from '../assets/images/car.png';
+import {
+	Entypo,
+	MaterialCommunityIcons,
+	FontAwesome5,
+	Ionicons,
+} from '@expo/vector-icons';
 
 export default function Page() {
 	return (
 		<View style={styles.container}>
-			<View style={styles.main}>
-				<Text style={styles.title}>Hello</Text>
-				<Text style={styles.subtitle}>
-					This is the first page of your app.
-				</Text>
+			<Header />
+			<Image source={car} style={styles.car} resizeMode='contain' />
+
+			<View style={styles.controls}>
+				<Entypo name='lock' size={30} color='gray' />
+				<MaterialCommunityIcons name='fan' size={30} color='gray' />
+				<FontAwesome5 name='bolt' size={30} color='gray' />
+				<Ionicons name='car-sport-sharp' size={30} color='gray' />
 			</View>
 		</View>
 	);
@@ -16,22 +27,15 @@ export default function Page() {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		alignItems: 'center',
-		padding: 24,
-        backgroundColor: '#161818'
+		backgroundColor: '#161818',
 	},
-	main: {
-		flex: 1,
-		justifyContent: 'center',
-		maxWidth: 960,
-		marginHorizontal: 'auto',
+	car: {
+		height: 350,
+		width: '100%',
 	},
-	title: {
-		fontSize: 64,
-		fontWeight: 'bold',
-	},
-	subtitle: {
-		fontSize: 36,
-		color: '#38434D',
-	},
+	controls: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        // backgroundColor: 'red'
+    }
 });
