@@ -25,7 +25,6 @@ const styles = StyleSheet.create({
 		fontSize: 28,
 		color: 'white',
 		fontWeight: 'bold',
-		marginBottom: 10,
 	},
 	status: {
 		fontSize: 18,
