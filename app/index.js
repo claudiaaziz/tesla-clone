@@ -13,7 +13,7 @@ export default function Page() {
 				data={menuOptions}
 				renderItem={MenuOption}
 				showsVerticalScrollIndicator={false}
-                ListHeaderComponent={Controls}
+				ListHeaderComponent={Controls}
 			/>
 		</View>
 	);

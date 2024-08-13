@@ -1,20 +1,27 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
+import { Link } from 'expo-router';
 
 export default function MenuOption({ item }) {
 	return (
-		<View style={styles.optionRow}>
-			<View style={styles.optionRowLeft}>
-				<MaterialCommunityIcons
-					name={item.iconName}
+		<Link href={item.href} asChild>
+			<Pressable style={styles.optionRow}>
+				<View style={styles.optionRowLeft}>
+					<MaterialCommunityIcons
+						name={item.iconName}
+						size={30}
+						color='gray'
+					/>
+					<Text style={styles.optionText}>{item.name}</Text>
+				</View>
+
+				<MaterialIcons
+					name='keyboard-arrow-right'
 					size={30}
 					color='gray'
 				/>
-				<Text style={styles.optionText}>{item.name}</Text>
-			</View>
-
-			<MaterialIcons name='keyboard-arrow-right' size={30} color='gray' />
-		</View>
+			</Pressable>
+		</Link>
 	);
 }
 
